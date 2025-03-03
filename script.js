@@ -4,104 +4,130 @@ function toggleMenu(){
     menu.classList.toggle("open");
     icon.classList.toggle("open");
 }
-var darkmode= document.getElementById("darkmode");
-darkmode.onclick=function()
-{
-    document.body.classList.toggle("dark-theme");
-    if(document.body.classList.contains("dark-theme"))
-    {
-        darkmode.src ="assets/sun.png";  
-        linkedin.src ="assets/linkedindark.png";
-        linkedin1.src ="assets/linkedindark.png";
-        github.src ="assets/githubdark.png";
-        experiences.src ="./assets/experiencedark.png";
-        educations.src ="./assets/educationdark.png";
-        arrowicon.src ="./assets/arrowdark.png";
-        arrowicon1.src ="./assets/arrowdark.png";
-        arrowicon2.src ="./assets/arrowdark.png";
-        checkmark.src ="./assets/checkmarkdark.png";
-        checkmark1.src ="./assets/checkmarkdark.png";
-        checkmark2.src ="./assets/checkmarkdark.png";
-        checkmark3.src ="./assets/checkmarkdark.png";
-        checkmark4.src ="./assets/checkmarkdark.png";
-        checkmark5.src ="./assets/checkmarkdark.png";
-        checkmark6.src ="./assets/checkmarkdark.png";
-        checkmark7.src ="./assets/checkmarkdark.png";
-        checkmark8.src ="./assets/checkmarkdark.png";
-        checkmark9.src ="./assets/checkmarkdark.png";
-        email.src ="./assets/emaildark.png";
+
+// System theme detection and theme management
+function detectSystemTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+    }
+    return 'light';
+}
+
+function setTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-theme');
+        document.getElementById('darkmode-desktop').src = "./assets/sun.png";
+        document.getElementById('darkmode-mobile').src = "./assets/sun.png";
+    } else {
+        document.body.classList.remove('dark-theme');
+        document.getElementById('darkmode-desktop').src = "./assets/moon.png";
+        document.getElementById('darkmode-mobile').src = "./assets/moon.png";
+    }
+    // Save theme preference
+    localStorage.setItem('theme', theme);
+}
+
+// Initialize theme
+function initializeTheme() {
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        // If no saved preference, use system theme
+        setTheme(detectSystemTheme());
+    }
+}
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    // Only update if there's no saved preference
+    if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+    }
+});
+
+// Update toggle function
+function toggleDarkMode() {
+    const isDark = document.body.classList.contains('dark-theme');
+    setTheme(isDark ? 'light' : 'dark');
+}
+
+// Initialize theme when page loads
+document.addEventListener('DOMContentLoaded', initializeTheme);
+
+// Add click event listeners to both icons
+document.getElementById("darkmode-desktop").addEventListener("click", toggleDarkMode);
+document.getElementById("darkmode-mobile").addEventListener("click", toggleDarkMode);
+
+window.addEventListener("beforeunload", function () {
+    localStorage.setItem("scrollPosition", window.scrollY);
+});
+
+window.addEventListener("load", function () {
+    if (localStorage.getItem("scrollPosition") !== null) {
+        window.scrollTo(0, localStorage.getItem("scrollPosition"));
+    }
+});
+
+// Smooth scroll to sections
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute('href'));
         
+        if (section) {
+            section.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Active section detection
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (scrollY >= (sectionTop - sectionHeight / 3)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Add this CSS for active link styling
+const styleSheet = document.createElement('style');
+styleSheet.textContent = `
+    .nav-links a.active {
+        color: #666;
+        position: relative;
     }
-    else{
-        darkmode.src ="assets/moon.png";
-        linkedin.src ="assets/linkedin.png";
-        linkedin1.src ="assets/linkedin.png";
-        github.src ="assets/github.png";
-        experiences.src ="./assets/experience.png";
-        educations.src ="./assets/education.png";
-        arrowicon.src ="./assets/arrow.png";
-        arrowicon1.src ="./assets/arrow.png";
-        arrowicon2.src ="./assets/arrow.png";
-        checkmark.src ="./assets/checkmark.png";
-        checkmark1.src ="./assets/checkmark.png";
-        checkmark2.src ="./assets/checkmark.png";
-        checkmark3.src ="./assets/checkmark.png";
-        checkmark4.src ="./assets/checkmark.png";
-        checkmark5.src ="./assets/checkmark.png";
-        checkmark6.src ="./assets/checkmark.png";
-        checkmark7.src ="./assets/checkmark.png";
-        checkmark8.src ="./assets/checkmark.png";
-        checkmark9.src ="./assets/checkmark.png";
-        email.src ="./assets/email.png";
+    
+    .nav-links a.active::after {
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--secondary-color);
     }
-}
-var darkmode1= document.getElementById("darkmode1");
-darkmode1.onclick=function()
-{
-    document.body.classList.toggle("dark-theme");
-    if(document.body.classList.contains("dark-theme"))
-    {
-        darkmode1.src ="assets/sun.png";  
-        linkedin.src ="assets/linkedindark.png";
-        linkedin1.src ="assets/linkedindark.png";
-        github.src ="assets/githubdark.png";
-        experiences.src ="./assets/experiencedark.png";
-        educations.src ="./assets/educationdark.png";
-        arrowicon.src ="./assets/arrowdark.png";
-        arrowicon1.src ="./assets/arrowdark.png";
-        arrowicon2.src ="./assets/arrowdark.png";
-        checkmark.src ="./assets/checkmarkdark.png";
-        checkmark1.src ="./assets/checkmarkdark.png";
-        checkmark2.src ="./assets/checkmarkdark.png";
-        checkmark3.src ="./assets/checkmarkdark.png";
-        checkmark4.src ="./assets/checkmarkdark.png";
-        checkmark5.src ="./assets/checkmarkdark.png";
-        checkmark6.src ="./assets/checkmarkdark.png";
-        checkmark7.src ="./assets/checkmarkdark.png";
-        checkmark8.src ="./assets/checkmarkdark.png";
-        checkmark9.src ="./assets/checkmarkdark.png";
-        email.src ="./assets/emaildark.png";  
-    }
-    else{
-        darkmode1.src ="assets/moon.png";
-        linkedin.src ="assets/linkedin.png";
-        linkedin1.src ="assets/linkedin.png";
-        github.src ="assets/github.png";
-        experiences.src ="./assets/experience.png";
-        educations.src ="./assets/education.png";
-        arrowicon.src ="./assets/arrow.png";
-        arrowicon1.src ="./assets/arrow.png";
-        arrowicon2.src ="./assets/arrow.png";
-        checkmark.src ="./assets/checkmark.png";
-        checkmark1.src ="./assets/checkmark.png";
-        checkmark2.src ="./assets/checkmark.png";
-        checkmark3.src ="./assets/checkmark.png";
-        checkmark4.src ="./assets/checkmark.png";
-        checkmark5.src ="./assets/checkmark.png";
-        checkmark6.src ="./assets/checkmark.png";
-        checkmark7.src ="./assets/checkmark.png";
-        checkmark8.src ="./assets/checkmark.png";
-        checkmark9.src ="./assets/checkmark.png";
-        email.src ="./assets/email.png";
-    }
-}
+`;
+document.head.appendChild(styleSheet);
+
+

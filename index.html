@@ -3,67 +3,67 @@
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnuGrah</title>
-    <link rel="icon" href="assets/profile-pic.png">
+    <meta name="color-scheme" content="light dark">
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="mediaquery.css"/>
  </head>
  <body>
-    <nav id="desktop-nav">
-      <div class="logo"></div>
-      <div>
+    <!-- <nav id="desktop-nav">
+      <div class="logo">Portfolio</div>
+      <div class="nav-left">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </div>
-      <img src="assets/moon.png" id="darkmode">
-    </nav>
-    <nav id="hamburger-nav">
-        <div class="logo"></div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick= "toggleMenu()">
-             <span></span>
-             <span></span>
-             <span></span>
+        <!-- <div class="dark-mode-toggle">
+          <img src="./assets/moon.png" id="darkmode-desktop" alt="Toggle dark mode">
+        </div> -->
+      <!-- </div>
+    </nav> --> 
+    <!-- <nav id="hamburger-nav">
+        <div class="logo">Portfolio</div>
+        <div class="nav-right">
+            <!-- <div class="dark-mode-toggle">
+                <img src="./assets/moon.png" id="darkmode-mobile" alt="Toggle dark mode">
+            </div> -->
+            <!-- <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                </div>
             </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick= "toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick= "toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick= "toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick= "toggleMenu()">Contact</a></li>
-            </div>
-           
-         </div>
-         <img src="assets/moon.png" id="darkmode1">
-    </nav>
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/profile-pic.png" alt="Anugrah Rk profile picture"/>
         </div>
+    </nav>  -->
+    <section id="profile">
         <div class="section__text">
             <p class="section__text__p1">Hello, I'm</p>
             <div class="container">
                 <h1 class="title typewriter">Anugrah Rk</h1>
             </div>
-            <p class="section__text__p2">Frontend Developer</p>
+            <p class="section__text__p2">Fullstack Developer</p>
             <div class="btn-container">
-                <button 
-                class="btn btn-color-2" 
-                onclick="window.open('./assets/resume-example.pdf')">
-                Download CV 
-               </button>
-               <button 
-                class="btn btn-color-1" 
-                onclick="location.href='./#contact'">
-                Contact Info
-              </button>
+                <button class="btn btn-color-2" onclick="window.open('https://drive.google.com/file/d/19zNNQtzghNoYL8gcPxVVCpiABvyUIe1G/view?usp=drive_link')">
+                    Resume 
+                </button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                    Contact Info
+                </button>
             </div>
             <div id="socials-container">
-                <img src="./assets/linkedin.png" id="linkedin" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/anugrahrk/'"/>
-                <img src="./assets/github.png" id="github" alt="My Github profile" class="icon" onclick="location.href='https://github.com/anugrahrk'"/>
+                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" onclick="location.href='https://www.linkedin.com/in/anugrahrk/'"/>
+                <img src="./assets/github.png" alt="GitHub" class="icon" onclick="location.href='https://github.com/anugrahrk'"/>
+                <img src="./assets/leetcode-icon.png" alt="LeetCode" class="icon" onclick="location.href='https://leetcode.com/u/anugrahrk6/'"/>
+                <img src="./assets/gfg.png" alt="GeeksForGeeks" class="icon" onclick="location.href='https://www.geeksforgeeks.org/user/anugra8hbg/'"/>
+                <img src="./assets/codeforces.png" alt="CodeForces" class="icon" onclick="location.href='https://codeforces.com/profile/bruteforceguy-2002'"/>
+                <img src="./assets/twitterx.png" alt="Twitter" class="icon" onclick="location.href='https://x.com/rk_anugrah'"/>
             </div>
         </div>
     </section>
@@ -71,129 +71,30 @@
         <p class="section__text__p1">Get To Know More</p>
         <h1 class="title">About Me</h1>
         <div class="section-container">
-            <div class="section__pic-container">
-                <img src="./assets/about-pic.png" alt="profile picture" 
-                class="about-pic"/>
-            </div>
                 <div class="about-details-container">
                     <div class="about-containers">
                         <div class="details-container">
                             <img src="./assets/experience.png" id="experiences" alt="Experience icon"  class="icon" />
                             <h3>Experience</h3>
-                            <p>0-1 years<br />Frontend Development</p>
+                            <p>6 months<br />UI/UX Testing<br />Banao Technologies, Bengaluru</p>
                         </div>
                         <div class="details-container">
                             <img src="./assets/education.png" id="educations" 
                             alt="education icon" class="icon" />
                             <h3>Education</h3>
-                            <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
+                            <p>BCA (2022)<br />MCA (2025)</p>
                         </div>
                     </div>
                     <div class="text-container">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-                            reprehenderit et laborum, rem, dolore eum quod voluptate
-                            exercitationem nobis, nihil esse debitis maxime facere minus sint
-                            delectus velit in eos quo officiis explicabo deleniti dignissimos.
-                            Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-                            reiciendis ea magnam? Nulla, impedit fuga
+                            I am a dedicated and results-driven MCA student at the College of Engineering with a passion for software development. 
+                            I possess a strong command of programming languages such as Python, Java, C++, C, and JavaScript.
                         </p>
                     </div>
                 </div>
             </div>
-        <img src="./assets/arrow.png" id="arrowicon" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
-    </section>
-    <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="experience-sub-title">
-                        FrontendDevelopment</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/checkmark.png" id="checkmark"  alt="experience icon" class="icon">
-                            <div>
-                                <h3>HTML</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" id="checkmark1" alt="experience icon" class="icon">
-                            <div>
-                                <h3>CSS</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" id="checkmark2" alt="experience icon" class="icon">
-                            <div>
-                                <h3>SASS</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" id="checkmark3" alt="experience icon" class="icon">
-                            <div>
-                                <h3>JavaScript</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" id="checkmark4" alt="experience icon" class="icon">
-                            <div>
-                                <h3>TypeScript</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" id="checkmark5" alt="experience icon" class="icon">
-                            <div>
-                                <h3>Material UI</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="details-container">
-                    <h2 class="experience-sub-title">
-                        BackendDevelopment</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/checkmark.png" id="checkmark6" alt="experience icon" class="icon">
-                            <div>
-                                <h3>PostgreSQL</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" id="checkmark7" alt="experience icon" class="icon">
-                            <div>
-                                <h3>Node.js</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" id="checkmark8" alt="experience icon" class="icon">
-                            <div>
-                                <h3>Express JS</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" id="checkmark9" alt="experience icon" class="icon">
-                            <div>
-                                <h3>Git</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/arrow.png" id="arrowicon1" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'">
-    </section>
+
+     </section>
     <section id="projects">
         <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
@@ -201,37 +102,28 @@
          <div class="about-containers">
           <div class="details-container color-container">
             <div class="article-container">
-                <img src="./assets/project-3.jpeg" alt="Project 3" class="project-img"/>
             </div>
-            <h2 class="experience-sub-title project-title">Tic-Tac-Toe</h2>
+            <h2 class="experience-sub-title project-title">Sudoku Solver</h2>
             <div class="btn-container">
-                <button class="btn btn-color-2 project-btn " onclick="location.href='https://github.com/anugrahrk/TicTacToe'">Github</button>
-                <button class="btn btn-color-2 project-btn " onclick="location.href='https://deluxe-clafoutis-c25907.netlify.app/'">Live Demo</button>
+                <button class="btn btn-color-2 project-btn " onclick="location.href='https://sudoku-solver-y90x.onrender.com/'">View Project</button>
             </div>
         </div>
         <div class="details-container color-container">
             <div class="article-container">
-                <img src="./assets/project-2.jpeg" alt="project 2" class="project-img"/>
             </div>
-            <h2 class="experience-sub-title project-title">QR Generator</h2>
+            <h2 class="experience-sub-title project-title">SWE Salary prediction 2020</h2>
             <div class="btn-container">
-                <button class="btn btn-color-2 project-btn " onclick="location.href='https://github.com/anugrahrk/qr-GENERATOR'">Github</button>
-                <button class="btn btn-color-2 project-btn " onclick="location.href='https://quiet-alpaca-e859b0.netlify.app/'">Live Demo</button>
+                <button class="btn btn-color-2 project-btn " onclick="location.href='https://salarypredictor-bngxmekn2wcvfwwsvvegxu.streamlit.app/'">View Project</button>
             </div>
         </div>
         <div class="details-container color-container">
             <div class="article-container">
-                <img src="./assets/project-1.jpeg" alt="project 1" class="project-img"/>
-            </div>
-            <h2 class="experience-sub-title project-title">Flappy Bird</h2>
-            <div class="btn-container">
-                <button class="btn btn-color-2 project-btn " onclick="location.href='https://github.com/anugrahrk/Flappy-bird'">Github</button>
-               <button class="btn btn-color-2 project-btn " onclick="location.href='./assets/flappy.zip'"download>Download</button>
-            </div>
+            <h2 class="experience-sub-title project-title">Under Construction !!!
+            </h2>
         </div>
     </div>
 </div>
-         <img src="./assets/arrow.png" id="arrowicon2" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
+ 
     </section>
     <section id="contact">
         <p class="section__text__p1">Get in Touch</p>
@@ -239,11 +131,15 @@
         <div class="contact-info-upper-container">
             <div class="contact-info-container">
                 <img src="./assets/email.png" id="email" alt="Email icon" class="icon contact-icon email-icon"/>
-                <p><a href="mailto:anugrahrk@hotmail.com">anugrahrk@hotmail.com</a></p>
+                <p><a href="mailto:anugrahrk@6gmail.com">mail</a></p>
             </div>
             <div class="contact-info-container">
                 <img src="./assets/linkedin.png" id="linkedin1" alt="LinkedIn icon" class="icon contact-icon"/>
                 <p><a href="https://www.linkedin.com/in/anugrahrk/">LinkedIn</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/twitterx.png" id="X" alt="X icon" class="icon contact-icon"/>
+                <p><a href="https://x.com/rk_anugrah">X</a></p>
             </div>
         </div>
     </section>
@@ -252,13 +148,12 @@
             <div class="nav-link-container">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                   </ul>
             </div>
         </nav>
-        <p>Copyright &#169; 2023 Anugrah Rk. All Rights Reserved</p>
+        <p>&#169; 2025 anugrahrk</p>
     </footer>
     <script src="script.js" ></script>
  </body>
